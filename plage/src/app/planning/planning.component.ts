@@ -13,7 +13,7 @@ export class PlanningComponent {
     var file2 = [];
     var file3 = [];
     for (let i = 0; i < 10; i++) {
-      file1.push(new Parasol(i,1,true, false));
+      file1.push(new Parasol(i,1,false, false));
       file2.push(new Parasol(i,2,false, false));
       file3.push(new Parasol(i,3,true, false));
     }
