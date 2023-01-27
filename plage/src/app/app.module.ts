@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlanningComponent } from './planning/planning.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { PlanningComponent } from './sub/planning/planning.component';
+import { AccueilComponent } from './main/accueil/accueil.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './sub/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LocataireComponent } from './locataire/locataire.component';

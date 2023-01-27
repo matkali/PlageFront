@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Parasol } from './../models/parasol';
+import { Parasol } from '../../models/parasol';
 
 @Component({
   selector: 'app-planning',
