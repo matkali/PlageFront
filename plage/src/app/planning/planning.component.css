@@ -1,0 +1,28 @@
+table {
+  background-color: rgb(231, 203, 140);
+  background-image: url("../../assets/images/mer.png");
+  background-repeat: repeat-x;
+  background-size: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+table div {
+  width: 65px;
+  height: 65px;
+}
+td{
+  background-image: url("../../assets/images/parasolFerme.png");
+  background-repeat: no-repeat;
+  background-size: 65px;
+}
+td.reserve{
+  background-image: url("../../assets/images/parasolOuvert.png");
+}
+td.select{
+    background-image: url("../../assets/images/parasolSelect.png");
+  }
+  td.chemin{
+    background-image: url("../../assets/images/chemin.png");
+  }
+
