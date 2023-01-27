@@ -9,6 +9,14 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LocataireComponent } from './locataire/locataire.component';
+import { LocataireResaComponent } from './locataire-resa/locataire-resa.component';
+import { ConcessionnaireComponent } from './concessionnaire/concessionnaire.component';
+import { LocataireVoirComponent } from './locataire-voir/locataire-voir.component';
+import { ConcessionnaireResaComponent } from './concessionnaire-resa/concessionnaire-resa.component';
+import { ConcessionnaireResaTraiterComponent } from './concessionnaire-resa-traiter/concessionnaire-resa-traiter.component';
+import { ConcessionnaireClientsComponent } from './concessionnaire-clients/concessionnaire-clients.component';
+import { ConcessionnaireUneResaComponent } from './concessionnaire-une-resa/concessionnaire-une-resa.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     PlanningComponent,
     AccueilComponent,
     InscriptionComponent,
-    NavbarComponent
+    NavbarComponent,
+    LocataireComponent,
+    LocataireResaComponent,
+    ConcessionnaireComponent,
+    LocataireVoirComponent,
+    ConcessionnaireResaComponent,
+    ConcessionnaireResaTraiterComponent,
+    ConcessionnaireClientsComponent,
+    ConcessionnaireUneResaComponent
   ],
   imports: [
     BrowserModule,
