@@ -17,6 +17,7 @@ import { ConcessionnaireResaComponent } from './main/concessionnaire-resa/conces
 import { ConcessionnaireResaTraiterComponent } from './main/concessionnaire-resa-traiter/concessionnaire-resa-traiter.component';
 import { ConcessionnaireClientsComponent } from './main/concessionnaire-clients/concessionnaire-clients.component';
 import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa/concessionnaire-une-resa.component';
+import { ORSYS_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -35,11 +36,12 @@ import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa
     ConcessionnaireUneResaComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    ORSYS_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
