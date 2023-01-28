@@ -13,18 +13,23 @@ table div {
   text-align: center;
   text-shadow: 1px 1px #a36615;
 }
-td{
+td {
   background-image: url("../../../assets/images/parasolFerme.png");
   background-repeat: no-repeat;
   background-size: 65px;
 }
-td.reserve{
+td.reserve {
   background-image: url("../../../assets/images/parasolOuvert.png");
 }
-td.select{
-    background-image: url("../../../assets/images/parasolSelect.png");
-  }
-  td.chemin{
-    background-image: url("../../../assets/images/chemin.png");
-  }
-
+td.select {
+  background-image: url("../../../assets/images/parasolSelect.png");
+}
+td.chemin {
+  background-image: url("../../../assets/images/chemin.png");
+}
+.barak {
+  background-image: url("../../../assets/images/barakafrite.png");
+  background-size: 715px;
+  background-position: bottom;
+  height: 75px;
+}

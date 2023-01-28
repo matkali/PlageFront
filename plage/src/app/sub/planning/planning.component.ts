@@ -24,7 +24,14 @@ export class PlanningComponent {
     //   new File(2, 4, file2, 2, new Date(), new Date()),
     //   new File(3, 4, file3, 2, new Date(), new Date()),
     // ];
-    service.getFilesInfo(new Date(2023,1,2),new Date(2023,1,4)).subscribe(files =>{
+    service.getFilesInfo(new Date(),new Date()).subscribe(files =>{
+      for(let f of files){
+        this.files.push(f);
+      }})
+  }
+  actualiser(dateDeb:HTMLInputElement,dateFin:HTMLInputElement){
+    this.files=[];
+    this.service.getFilesInfo(dateDeb.valueAsDate,dateFin.valueAsDate).subscribe(files =>{
       for(let f of files){
         this.files.push(f);
       }})
