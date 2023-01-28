@@ -10,6 +10,8 @@ table {
 table div {
   width: 65px;
   height: 65px;
+  text-align: center;
+  text-shadow: 1px 1px #a36615;
 }
 td{
   background-image: url("../../../assets/images/parasolFerme.png");

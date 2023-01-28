@@ -13,11 +13,11 @@
       <div></div>
     </tr>
     <tr *ngFor="let file of files">
-      <ng-template ngFor let-parasol [ngForOf]="file" let-i="index">
-        <td [ngClass]="{ reserve: parasol.reserve, select: parasol.select }">
-          <div (click)="select(parasol)"></div>
+      <ng-template ngFor let-parasol [ngForOf]="file.parasols">
+        <td *ngIf="parasol.numEmplacement>=0" [ngClass]="{ reserve: parasol.reserve, select: parasol.select }">
+          <div (click)="select(parasol)"><br><br>{{parasol.numFile}}{{(parasol.numEmplacement + 10).toString(36).toUpperCase()}} </div>
         </td>
-        <td *ngIf="i == 4" class="chemin"><div></div></td>
+        <td *ngIf="parasol.numEmplacement== file.chemin" class="chemin"><div></div></td>
       </ng-template>
     </tr>
   </table>
