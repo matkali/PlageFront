@@ -14,7 +14,7 @@
             <input ngModel required name="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <select  ngModel required name="pays" class="form-select" aria-label="Default select example">
+        <select  name="pays" class="form-select" aria-label="Default select example">
             <option selected>Selectionnez votre pays</option>
             <option value="France">France</option>
             <option value="Gabon">Gabon</option>
@@ -23,7 +23,7 @@
             <option value="Dominique">Dominique</option>
         </select>
         <p></p>
-        <select ngModel required name="lienDeParente" class="form-select" aria-label="Default select example">
+        <select name="lienDeParente" class="form-select" aria-label="Default select example">
             <option selected>Selectionnez votre lien de parente avec le concessionnaire</option>
             <option value="Parent">Mère/Père</option>
             <option value="Fraternel">Frère/Soeur</option>
@@ -34,6 +34,6 @@
             <label for="exampleInputPassword1">Mot de passe</label>
             <input ngModel required name="motDePasse" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" minlength="8" required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
 </div>

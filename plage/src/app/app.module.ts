@@ -18,6 +18,8 @@ import { ConcessionnaireResaTraiterComponent } from './main/concessionnaire-resa
 import { ConcessionnaireClientsComponent } from './main/concessionnaire-clients/concessionnaire-clients.component';
 import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa/concessionnaire-une-resa.component';
 import { ORSYS_ROUTING } from './app.routing';
+import { NavbarclientComponent } from './sub/navbarclient/navbarclient.component';
+import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navbarconcessionnaire.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ORSYS_ROUTING } from './app.routing';
     ConcessionnaireResaComponent,
     ConcessionnaireResaTraiterComponent,
     ConcessionnaireClientsComponent,
-    ConcessionnaireUneResaComponent
+    ConcessionnaireUneResaComponent,
+    NavbarclientComponent,
+    NavbarconcessionnaireComponent
   ],
   imports: [
   BrowserModule,

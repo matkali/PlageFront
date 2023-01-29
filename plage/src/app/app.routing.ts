@@ -21,8 +21,8 @@ const myRoutes: Routes = [
         {path:'resa', component: LocataireResaComponent},
         {path:'voir', component: LocataireVoirComponent}
     ],},
-    {path:'', children:[
-        {path:'concessionnaire', component: ConcessionnaireComponent},
+    {path:'concessionnaire', children:[
+        {path:'', component: ConcessionnaireComponent},
         {path:'resa', component: ConcessionnaireResaComponent},
         {path:'resasATraiter', component: ConcessionnaireResaTraiterComponent},
         {path:'clients', component: ConcessionnaireClientsComponent},

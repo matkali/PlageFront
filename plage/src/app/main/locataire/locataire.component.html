@@ -1,1 +1,16 @@
-<p>locataire works!</p>
+<app-navbarclient></app-navbarclient>
+<p></p>
+<div class="container">
+  <div class="row">
+      <div class="col-md-7">
+        <app-planning></app-planning>
+      </div>
+      <div class="col-md-5">
+        <button class="btn btn-primary" [routerLink]="['locataire/voir']">Voir mes réservations</button><br>
+        <p></p>
+        <button class="btn btn-primary" [routerLink]="['/locataire/resa']">Nouvelle réservation</button>
+      </div>
+  </div>
+</div>
+
+

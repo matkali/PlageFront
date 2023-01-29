@@ -1,18 +1,20 @@
-<h2 class="text-center">Planning</h2>
+<!-- <h2 class="text-left">Planning</h2> -->
 <form name="f">
   <div class="container">
     <div class="row">
+      <label for="datedeb" class="col-sm-1">Du:</label>
       <div class="form-group col-xl-4">
-        <label for="datedeb">Du:</label>
         <input type="date" class="form-control" id="datedeb" name="datedeb" #datedeb/>
       </div>
+      <label for="datefin" class="col-sm-1">Au:</label>
       <div class="form-group col-xl-4">
-        <label for="datefin">Au:</label>
         <input type="date" class="form-control" id="datefin" name="datefin" #datefin />
       </div>
     </div>
+    <p></p>
     <input class="btn btn-primary" (click)="actualiser(datedeb,datefin)" value="Voir les disponibilités">
   </div>
+  <p></p>
   <table name="planning">
     <tr>
       <div></div>
