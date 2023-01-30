@@ -21,16 +21,16 @@ export class InscriptionComponent {
     console.log(ajd);
     let locCree = new Locataire(
       null,
-      email.value,
-      'locataire',
-      ajdLocale,
-      lienDeParente.value,
-      pays.value,
-      true,
-      0,
       nom.value,
       prenom.value,
-      mdp.value);
+      email.value,
+      mdp.value,
+      'locataire',
+      ajd,
+      lienDeParente.value,
+      pays.value,
+      null,
+      0,);
       console.log(locCree);
       let response = this.service.locataireCreation(locCree);
       response.subscribe({
