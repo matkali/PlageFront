@@ -14,9 +14,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { InscriptionComponent } from './main/inscription/inscription.component';
 
 const myRoutes: Routes = [
-    {path: '', component: AccueilComponent},
+    {path:'', component: AccueilComponent},
     {path:'inscription', component: InscriptionComponent},
-    {path: 'locataire', children:[
+    {path:'locataire', children:[
         {path:'', component: LocataireComponent},
         {path:'resa', component: LocataireResaComponent},
         {path:'voir', component: LocataireVoirComponent}
