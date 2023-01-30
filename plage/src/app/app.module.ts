@@ -21,6 +21,7 @@ import { ORSYS_ROUTING } from './app.routing';
 import { NavbarclientComponent } from './sub/navbarclient/navbarclient.component';
 import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navbarconcessionnaire.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ListeLocataireComponent } from './sub/liste-locataire/liste-locataire.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CookieService } from 'ngx-cookie-service';
     ConcessionnaireClientsComponent,
     ConcessionnaireUneResaComponent,
     NavbarclientComponent,
-    NavbarconcessionnaireComponent
+    NavbarconcessionnaireComponent,
+    ListeLocataireComponent
   ],
   imports: [
   BrowserModule,
