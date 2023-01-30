@@ -13,15 +13,6 @@ export class AccueilComponent {
   date;
   constructor(private service:HttpService, private user:UserService, private router:Router) { }
 
-  getReservationsEnAttente(){
-    this.service.getReservationEnAttente().subscribe(reservations =>{
-      for(let r of reservations){
-        console.log(r);
-        this.date=r.dateDebut;
-      }
-    })
-  }
-
   connexion(email: HTMLInputElement, mdp: HTMLInputElement): boolean {
     this.service.utilisateurConnexion(email.value, mdp.value).subscribe({
       next: (u)=>{

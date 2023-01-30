@@ -1,0 +1,9 @@
+.row {
+    padding: 5px;
+    margin: 5px;
+    border: grey solid 1px;
+  }
+
+  .nom {
+    font-weight: 700;
+  }

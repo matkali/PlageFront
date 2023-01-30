@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-2 nom">
+    {{ this.locataire.prenom }} {{ this.locataire.nom }}
+  </div>
+  <div class="col-md-2 nom">
+    {{ this.locataire.email }}
+  </div>
+  <div class="col-md-2">{{ this.locataire.lienDeParenteString }}</div>
+  <div class="col-md-2">{{ this.locataire.paysString }}</div>
+  <div class="col-md-2">{{ date }}</div>
+  <div class="col-md-2">
+    <button class="btn btn-danger" *ngIf="!locataire.valide"  (click)="supprime()">Supprimer ce compte</button>
+  </div>
+</div>
