@@ -2,41 +2,69 @@
 <form name="f">
   <div class="container">
     <div class="row">
-      <label for="datedeb" class="col-sm-1">Du:</label>
-      <div class="form-group col-xl-4">
-        <input type="date" class="form-control" id="datedeb" name="datedeb" #datedeb/>
+      <div class="col-md-1">
+        <label for="datedeb">Du:</label>
       </div>
-      <label for="datefin" class="col-sm-1">Au:</label>
-      <div class="form-group col-xl-4">
-        <input type="date" class="form-control" id="datefin" name="datefin" #datefin />
+      <div class="col-md-3">
+        <input
+          type="date"
+          class="form-control"
+          id="datedeb"
+          name="datedeb"
+          #datedeb
+          placeholder="Du"
+        />
+      </div>
+
+      <div class="col-md-1">
+        <label for="datedeb">Au:</label>
+      </div>
+      <div class="col-md-3">
+        <input
+          type="date"
+          class="form-control"
+          id="datefin"
+          name="datefin"
+          #datefin
+          placeholder="Au"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <input
+          class="btn btn-primary"
+          (click)="actualiser(datedeb, datefin)"
+          value="Voir les disponibilités"
+        />
       </div>
     </div>
-    <p></p>
-    <input class="btn btn-primary" (click)="actualiser(datedeb,datefin)" value="Voir les disponibilités">
   </div>
-  <p></p>
-  <table name="planning">
-    <tr>
-      <div></div>
-    </tr>
-    <tr *ngFor="let file of files">
-      <ng-template ngFor let-parasol [ngForOf]="file.parasols">
-        <td
-          *ngIf="parasol.numEmplacement >= 0"
-          [ngClass]="{ reserve: parasol.reserve, select: parasol.select }"
-        >
-          <div (click)="select(parasol)">
-            <br /><br />{{ parasol.numFile
-            }}{{ (parasol.numEmplacement + 10).toString(36).toUpperCase() }}
-          </div>
-        </td>
-        <td *ngIf="parasol.numEmplacement == file.chemin" class="chemin">
-          <div></div>
-        </td>
-      </ng-template>
-    </tr>
-    <tr>
-      <td colspan="11" class="barak"></td>
-    </tr>
-  </table>
 </form>
+<br>
+<div class="row">
+  <div class="col-xl-8">
+    <table name="planning">
+      <tr>
+        <div></div>
+      </tr>
+      <tr *ngFor="let file of files">
+        <ng-template ngFor let-parasol [ngForOf]="file.parasols">
+          <td
+            *ngIf="parasol.numEmplacement >= 0"
+            [ngClass]="{ reserve: parasol.reserve, select: parasol.select }"
+          >
+            <div (click)="select(parasol)">
+              <br /><br />{{ parasol.numFile
+              }}{{ (parasol.numEmplacement + 10).toString(36).toUpperCase() }}
+            </div>
+          </td>
+          <td *ngIf="parasol.numEmplacement == file.chemin" class="chemin">
+            <div></div>
+          </td>
+        </ng-template>
+      </tr>
+      <tr>
+        <td colspan="11" class="barak"></td>
+      </tr>
+    </table>
+  </div>
+</div>
