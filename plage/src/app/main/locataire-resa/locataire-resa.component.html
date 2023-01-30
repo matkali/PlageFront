@@ -7,41 +7,50 @@
       </div>
       <div class="col-md-5">
         <h2>Nouvelle réservation</h2>
-        <form #f="ngForm" >
+        <div [formGroup]="locationForm">
             <div class="row">
                 <label for="datedeb" class="col-sm-1">Du:</label>
                 <div class="form-group col-xl-4">
-                  <input type="date" class="form-control" id="datedeb" name="datedeb" #datedeb/>
+                  <input type="date" class="form-control" id="datedeb" formControlName="datedeb" #datedeb/>
                 </div>
                 <label for="datefin" class="col-sm-1">Au:</label>
                 <div class="form-group col-xl-4">
-                  <input type="date" class="form-control" id="datefin" name="datefin" #datefin />
+                  <input type="date" class="form-control" id="datefin" formControlName="datefin" #datefin />
                 </div>
               </div>
-            <div class="form-group" *ngFor="let para of nbParasol; let index = index ">
-                <label for="InputParasol">Parasol {{index+1}}</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Selectionnez votre file</option>
-                    <option value="1">File 1</option>
-                    <option value="2">File 2</option>
-                    <option value="3">File 3</option>
-                    <option value="4">File 4</option>
-                    <option value="5">File 5</option>
-                    <option value="6">File 6</option>
-                    <option value="7">File 7</option>
-                    <option value="8">File 8</option>
-                </select>
-            </div>
+              <div formArrayName="parasols">
+                <div class="form-group" *ngFor="let para of parasols.controls; let index = index" >
+                    <label for="para-{{index}}">Parasol {{index+1}}</label>
+                    <select class="form-select" aria-label="Default select example" id="para-{{index}}" [formControlName]="index">
+                        <option selected>Selectionnez votre file</option>
+                        <option value="1">File 1</option>
+                        <option value="2">File 2</option>
+                        <option value="3">File 3</option>
+                        <option value="4">File 4</option>
+                        <option value="5">File 5</option>
+                        <option value="6">File 6</option>
+                        <option value="7">File 7</option>
+                        <option value="8">File 8</option>
+                    </select>
+                </div>
+              </div>
             <p></p>
-            <button class="btn btn-primary" (click)="ajoutPara()">Ajouter un parasol</button>
+            <div class="row">
+              <div class="col-xl-5">
+                 <button class="btn btn-primary" (click)="ajoutPara()">Ajouter un parasol</button>
+              </div>
+              <div class="col-xl-4">
+                  <button class="btn btn-primary" (click)="deletPara()">Retirer un parasol</button>
+              </div>
+          </div>
             <div class="form-group">
                 <div class="form-group">
                     <label for="my-textarea">Remarque</label>
-                    <textarea id="my-textarea" class="form-control" name="" rows="3"></textarea>
+                    <textarea id="my-textarea" class="form-control" formControlName="remarque" rows="3" #remarque></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
+            <button type="submit" (click)="submit()" class="btn btn-primary" >Envoyer</button>
+        </div>
       </div>
   </div>
 </div>

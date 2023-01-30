@@ -1,5 +1,6 @@
 import { Concessionnaire } from "./concessionnaire";
 import { Statut } from './statut';
+import { Parasol } from './parasol';
 
 export class Location{
     constructor(
@@ -10,5 +11,6 @@ export class Location{
         public concessionnaire : Concessionnaire,
         public statut : Statut,
         public nbParasols : number,
+        public parasols: Parasol[]
     ){}
 }
