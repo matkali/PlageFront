@@ -20,6 +20,8 @@ import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa
 import { ORSYS_ROUTING } from './app.routing';
 import { NavbarclientComponent } from './sub/navbarclient/navbarclient.component';
 import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navbarconcessionnaire.component';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navb
     HttpClientModule, 
     ORSYS_ROUTING
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,4 +23,11 @@ export class HttpService {
   getReservation(): Observable<Location[]>{
     return this.client.get<Location[]>(`http://localhost:8080/api/locations`);
   }
+  utilisateurConnexion(email: string, motDePasse: String): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/utilisateurs/connexion/${email}/${motDePasse}`,null);
+  }
+
+  locataireCreation(nom: string, prenom: string, email: string, motDePasse: string, lienDeParente: string, pays: string): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocataire/${nom}/${prenom}${email}/${motDePasse}${lienDeParente}/${pays}`,null);
+  }
 }
