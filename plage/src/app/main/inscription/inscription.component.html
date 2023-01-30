@@ -1,20 +1,20 @@
 <h1>Page d'inscription</h1>
 <div class="container">
-    <form #f="ngForm" (ngSubmit)="creerClient(f.value)">
+    <form #f="ngForm" (ngSubmit)="creerClient(nom, prenom, email, pays, lienDeParente, mdp)">
         <div class="form-group" >
         <label for="InputNom">Nom</label>
-        <input ngModel required name="nom" type="text" class="form-control" id="InputNom" placeholder="Entrez votre nom">
+        <input ngModel required name="nom" type="text" class="form-control" id="InputNom" placeholder="Entrez votre nom" #nom>
         </div>
         <div class="form-group">
             <label for="InputPrenom">Prenom</label>
-            <input ngModel required name="prenom" type="text" class="form-control" id="InputPrenom" placeholder="Entrez votre prenom">
+            <input ngModel required name="prenom" type="text" class="form-control" id="InputPrenom" placeholder="Entrez votre prenom" #prenom>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Adresse mail</label>
-            <input ngModel required name="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail">
+            <label for="email">Adresse mail</label>
+            <input ngModel required name="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" #email>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <select  name="pays" class="form-select" aria-label="Default select example">
+        <select ngModel name="pays" class="form-select" aria-label="Default select example" #pays> 
             <option selected>Selectionnez votre pays</option>
             <option value="France">France</option>
             <option value="Gabon">Gabon</option>
@@ -23,7 +23,7 @@
             <option value="Dominique">Dominique</option>
         </select>
         <p></p>
-        <select name="lienDeParente" class="form-select" aria-label="Default select example">
+        <select ngModel name="lienDeParente" class="form-select" aria-label="Default select example" #lienDeParente>
             <option selected>Selectionnez votre lien de parente avec le concessionnaire</option>
             <option value="Parent">Mère/Père</option>
             <option value="Fraternel">Frère/Soeur</option>
@@ -32,7 +32,7 @@
         </select>
         <div class="form-group">
             <label for="exampleInputPassword1">Mot de passe</label>
-            <input ngModel required name="motDePasse" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" minlength="8" required>
+            <input ngModel required name="motDePasse" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" minlength="8" required #mdp>
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>

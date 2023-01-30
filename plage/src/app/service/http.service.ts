@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Location } from '../models/location';
 import { File } from '../models/file';
 import { formatDate } from '@angular/common';
+import { Locataire } from './../models/locataire';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class HttpService {
     return this.client.post(`http://localhost:8080/api/utilisateurs/connexion/${email}/${motDePasse}`,null);
   }
 
-  locataireCreation(nom: string, prenom: string, email: string, motDePasse: string, lienDeParente: string, pays: string): Observable<object>{
-    return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocataire/${nom}/${prenom}${email}/${motDePasse}${lienDeParente}/${pays}`,null);
+  locataireCreation(loc: Locataire): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocataire`,loc);
   }
 }
