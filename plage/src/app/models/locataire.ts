@@ -1,6 +1,4 @@
-import { LienDeParente } from './lienDeParente';
 import { Utilisateur } from './utilisateur';
-import { Pays } from './pays';
 
 export class Locataire extends Utilisateur{
     constructor(
@@ -8,9 +6,11 @@ export class Locataire extends Utilisateur{
         public override email : string,
         public override role : string,
         public dateHeure : Date,
-        public lienDeParente : LienDeParente,
-        public pays : Pays,
+        public lienDeParente : string,
+        public pays : string,
         public valide : boolean,
+        public coef : number,
+
     ){
         super(id, email, role);
     }
