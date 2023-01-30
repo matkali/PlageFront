@@ -9,8 +9,9 @@ import { Locataire } from './../../models/locataire';
 })
 export class ListeLocataireComponent {
   locataires : Locataire[] = [];
-  constructor(private service:HttpService){ 
-    service.getLocataire().subscribe(locataires =>{
+  constructor(private service:HttpService){ }
+  ngOnInit():void{
+    this.service.getLocataire().subscribe(locataires =>{
       for(let locataire of locataires){
         this.locataires.push(locataire);
       }});

@@ -5,11 +5,14 @@ export class Locataire extends Utilisateur{
         public override id : number,
         public override email : string,
         public override role : string,
-        public dateHeure : Date,
-        public lienDeParente : string,
-        public pays : string,
+        public dateHeureInscription : Date,
+        public lienDeParenteString : string,
+        public paysString : string,
         public valide : boolean,
-        public coef : number,
+        public coefficient : number,
+        public nom : string,
+        public prenom :  string,
+        public mdp : string,
 
     ){
         super(id, email, role);
