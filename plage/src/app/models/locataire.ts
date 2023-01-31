@@ -1,6 +1,4 @@
 import { Utilisateur } from './utilisateur';
-import { LocalDate } from 'local-date';
-import { formatDate } from '@angular/common';
 
 export class Locataire extends Utilisateur{
     constructor(
