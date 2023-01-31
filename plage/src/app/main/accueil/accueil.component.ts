@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
 import { UserService } from 'src/app/service/user.service';
 import { Utilisateur } from './../../models/utilisateur';
+import { Concessionnaire } from './../../models/concessionnaire';
 
 @Component({
   selector: 'app-accueil',
@@ -40,6 +41,15 @@ export class AccueilComponent {
     });
 
     return false;
+  }
+
+  ngOnInit(){
+
+    if(this.user.getUser!=null && this.user.getUser().role=='locataire'){
+      this.router.navigate(['/locataire']);
+    } else if (this.user.getUser!=null && this.user.getUser().role=='Concessionnaire'){
+      this.router.navigate(['/concessionnaire']);
+    }
   }
 
 }

@@ -15,9 +15,6 @@ export class Locataire extends Utilisateur{
         public paysString : string,
         public valide : boolean,
         public coefficient : number,
-        
-        
-
     ){
         super(id, email, role);
     }
