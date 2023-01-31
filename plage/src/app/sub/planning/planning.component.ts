@@ -23,9 +23,5 @@ export class PlanningComponent {
         this.files.push(f);
       }})
   }
-  select(parasol: Parasol) {
-    if (!parasol.reserve) {
-      parasol.select = !parasol.select;
-    }
-  }
+ 
 }

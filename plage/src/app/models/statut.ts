@@ -1,3 +1,3 @@
-export class Statut{
-    
+export class Statut {
+  constructor(public nom: string) {}
 }

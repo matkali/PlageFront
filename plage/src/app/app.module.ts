@@ -23,6 +23,7 @@ import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navb
 import { CookieService } from 'ngx-cookie-service';
 import { ListeLocataireComponent } from './sub/liste-locataire/liste-locataire.component';
 import { ItemLocataireComponent } from './sub/item-locataire/item-locataire.component';
+import { PlageSelectorComponent } from './sub/plage-selector/plage-selector.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ItemLocataireComponent } from './sub/item-locataire/item-locataire.comp
     NavbarclientComponent,
     NavbarconcessionnaireComponent,
     ListeLocataireComponent,
-    ItemLocataireComponent
+    ItemLocataireComponent,
+    PlageSelectorComponent
   ],
   imports: [
   BrowserModule,

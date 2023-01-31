@@ -22,8 +22,12 @@ export class HttpService {
     return this.client.get<File[]>(`http://localhost:8080/api/files/${formatDate(dateDeb,'yyyy-MM-dd','en-US')}/${formatDate(dateFin,'yyyy-MM-dd','en-US')}`);
   }
 
-  getLocation(): Observable<Location[]>{
+  getLocations(): Observable<Location[]>{
     return this.client.get<Location[]>(`http://localhost:8080/api/locations`);
+  }
+
+  getLocation(id: number): Observable<Location>{
+    return this.client.get<Location>(`http://localhost:8080/api/location/${id}`);
   }
 
   getLocataire(): Observable<Locataire[]>{
