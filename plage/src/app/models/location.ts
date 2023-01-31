@@ -2,7 +2,7 @@ import { Concessionnaire } from "./concessionnaire";
 import { Statut } from './statut';
 import { Parasol } from './parasol';
 import { Locataire } from 'src/app/models/locataire';
-import { Utilisateur } from './utilisateur';
+
 
 export class Location{
     

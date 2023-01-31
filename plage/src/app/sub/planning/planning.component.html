@@ -52,7 +52,7 @@
             *ngIf="parasol.numEmplacement >= 0"
             [ngClass]="{ reserve: parasol.reserve, select: parasol.select }"
           >
-            <div (click)="select(parasol)">
+            <div >
               <br /><br />{{ parasol.numFile
               }}{{ (parasol.numEmplacement + 10).toString(36).toUpperCase() }}
             </div>

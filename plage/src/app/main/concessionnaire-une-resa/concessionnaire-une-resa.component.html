@@ -1,1 +1,36 @@
 <app-navbarconcessionnaire></app-navbarconcessionnaire>
+<p></p>
+<div class="container">
+  <div class="row">
+      <div class="col-md-7">
+        <app-plage-selector></app-plage-selector>
+      </div>
+      <div class="col-md-5">
+            <h2>Détail réservation</h2>
+            <div>
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item">Date de début : {{location.dateDebut}}</li>
+                    <li class="list-group-item">Date de début : {{location.dateFin}}</li>
+                    <li class="list-group-item">Montant à régler : {{location.montantAReglerEnEuros}}</li>
+                    <li class="list-group-item">Remarque : {{location.remarque}}</li>
+                    <li class="list-group-item">Nombre de Parasol : {{location.nbParasols}}</li>
+                    <li class="list-group-item">Statut : {{location.statut.nom}}</li>
+                    <li class="list-group-item">Client : {{location.locataire.email}}</li>
+                    <li *ngFor="let file of fileTab, let index = index" class="list-group-item">File {{index+1}} : {{file}} </li>
+                  </ul>
+            </div>
+        </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+        <button class="btn btn-primary" (click)="test()">En attente</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-success">Valider</button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-danger">Rejeter</button>
+    </div>
+</div>

@@ -24,6 +24,7 @@ import { ListeLocataireComponent } from './sub/liste-locataire/liste-locataire.c
 import { ItemLocataireComponent } from './sub/item-locataire/item-locataire.component';
 import { ListeReservationComponent } from './sub/liste-reservation/liste-reservation.component';
 import { ItemReservationComponent } from './sub/item-reservation/item-reservation.component';
+import { PlageSelectorComponent } from './sub/plage-selector/plage-selector.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ItemReservationComponent } from './sub/item-reservation/item-reservatio
     ListeLocataireComponent,
     ItemLocataireComponent,
     ListeReservationComponent,
-    ItemReservationComponent
+    ItemReservationComponent,
+    PlageSelectorComponent
   ],
   imports: [
   BrowserModule,

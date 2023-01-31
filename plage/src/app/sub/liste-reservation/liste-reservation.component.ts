@@ -12,7 +12,7 @@ export class ListeReservationComponent {
   locations: Location[] = [];
   constructor(private service: HttpService) {}
   ngOnInit(): void {
-    this.service.getLocation().subscribe((locations) => {
+    this.service.getLocations().subscribe((locations) => {
       for (let location of locations) {
         this.locations.push(location);
       }
