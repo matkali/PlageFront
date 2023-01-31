@@ -39,32 +39,14 @@
     </div>
   </div>
 </form>
-<br>
+<br />
 <div class="row">
   <div class="col-xl-8">
-    <table name="planning">
-      <tr>
-        <div></div>
-      </tr>
-      <tr *ngFor="let file of files">
-        <ng-template ngFor let-parasol [ngForOf]="file.parasols">
-          <td
-            *ngIf="parasol.numEmplacement >= 0"
-            [ngClass]="{ reserve: parasol.reserve, select: parasol.select }"
-          >
-            <div >
-              <br /><br />{{ parasol.numFile
-              }}{{ (parasol.numEmplacement + 10).toString(36).toUpperCase() }}
-            </div>
-          </td>
-          <td *ngIf="parasol.numEmplacement == file.chemin" class="chemin">
-            <div></div>
-          </td>
-        </ng-template>
-      </tr>
-      <tr>
-        <td colspan="11" class="barak"></td>
-      </tr>
-    </table>
+    <app-plage-selector
+      [choisir]="false"
+      [montrer]="montrer"
+      [dateD]="this.dateD"
+      [dateF]="this.dateF"
+    ></app-plage-selector>
   </div>
 </div>
