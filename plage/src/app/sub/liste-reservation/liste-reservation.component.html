@@ -1,10 +1,15 @@
 <div class="row">
-    <div class="col-md-2 nom"(click)="triDu()">Du :</div>
-    <div class="col-md-2 nom" (click)="triAu()">Au :</div>
-    <div class="col-md-2" (click)="triMontant()">Montant</div>
-    <div class="col-md-2" (click)="triNb()">Nombre de parasols</div>
-    <div class="col-md-2" (click)="triStatut()">Statut</div>
-    <div class="col-md-2">Traiter</div>
-  </div>
-  
-<app-item-reservation *ngFor="let location of locations" [location]="location"></app-item-reservation>
+  <div class="col-md-2 nom" (click)="triDu()">Du :</div>
+  <div class="col-md-2 nom" (click)="triAu()">Au :</div>
+  <div class="col-md-2" (click)="triMontant()">Montant</div>
+  <div class="col-md-2" (click)="triNb()">Nombre de parasols</div>
+  <div class="col-md-2" (click)="triStatut()">Statut</div>
+  <div class="col-md-2" *ngIf="this.id != null">Voir les détails</div>
+  <div class="col-md-2" *ngIf="this.id == null">Traitement</div>
+</div>
+
+<app-item-reservation
+  *ngFor="let location of locations"
+  [location]="location"
+  [viewLocataire]="this.id != null"
+></app-item-reservation>

@@ -10,10 +10,11 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class LocataireVoirComponent {
   constructor(private service: HttpService, private user: UserService, private router: Router){}
-
+  public id:number;
   ngOnInit(){
     if(this.user.getUser()==null || this.user.getUser().role!='locataire'){
       this.router.navigate(['']);
     }
+    this.id = this.user.getUser().id;
   }
 }

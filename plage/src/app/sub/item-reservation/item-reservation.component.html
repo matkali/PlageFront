@@ -9,8 +9,8 @@
     <div class="col-md-2">{{ this.location.nbParasols }}</div>
     <div class="col-md-2">{{ this.location.statut.nom }}</div>
     <div class="col-md-2">
-      <button *ngIf="this.location.statut.nom=='En attente'" class="btn btn-warning"  (click)="voirDetails()">Traiter</button>
-      <button *ngIf="this.location.statut.nom=='Acceptée'" class="btn btn-primary"  (click)="voirDetails()">Voir détails</button>
-      <button *ngIf="this.location.statut.nom=='Refusée'" class="btn btn-danger"  (click)="voirDetails()">Voir détails</button>
+      <button *ngIf="this.location.statut.nom=='En attente'&&!this.viewLocataire" class="btn btn-warning"  (click)="voirDetails()">Traiter</button>
+      <button *ngIf="this.location.statut.nom=='Acceptée'||this.viewLocataire" class="btn btn-primary"  (click)="voirDetails()">Voir détails</button>
+      <button *ngIf="this.location.statut.nom=='Refusée'&&!this.viewLocataire" class="btn btn-danger"  (click)="voirDetails()">Voir détails</button>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ItemReservationComponent {
   @Input() location: Location;
+  @Input() viewLocataire : boolean;
   datedeb: string;
   datefin:string;
   constructor(private router: Router){}

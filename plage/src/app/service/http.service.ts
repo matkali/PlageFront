@@ -26,6 +26,10 @@ export class HttpService {
     return this.client.get<Location[]>(`http://localhost:8080/api/locations`);
   }
 
+  getMesLocations(id:number):Observable<Location[]>{
+    return this.client.get<Location[]>(`http://localhost:8080/api/meslocations/${id}`);
+  }
+
   getLocation(id: number): Observable<Location>{
     return this.client.get<Location>(`http://localhost:8080/api/location/${id}`);
   }
