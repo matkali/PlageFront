@@ -3,7 +3,6 @@ import { HttpService } from 'src/app/service/http.service';
 import { Router } from '@angular/router';
 import { UserService } from './../../service/user.service';
 import { Locataire } from 'src/app/models/locataire';
-import { LocalDate } from 'local-date';
 
 @Component({
   selector: 'app-inscription',
