@@ -15,5 +15,6 @@ export class ConcessionnaireResaComponent {
     if(this.user.getUser()==null || this.user.getUser().role!='concessionnaire'){
       this.router.navigate(['']);
     }
+    
   }
 }

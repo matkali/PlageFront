@@ -5,6 +5,8 @@ import { Locataire } from 'src/app/models/locataire';
 import { Utilisateur } from './utilisateur';
 
 export class Location{
+    
+    public id :number = 0;
     constructor(
         public dateDebut : Date,
         public dateFin : Date,

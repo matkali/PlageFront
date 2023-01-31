@@ -14,7 +14,6 @@ import { LocataireResaComponent } from './main/locataire-resa/locataire-resa.com
 import { ConcessionnaireComponent } from './main/concessionnaire/concessionnaire.component';
 import { LocataireVoirComponent } from './main/locataire-voir/locataire-voir.component';
 import { ConcessionnaireResaComponent } from './main/concessionnaire-resa/concessionnaire-resa.component';
-import { ConcessionnaireResaTraiterComponent } from './main/concessionnaire-resa-traiter/concessionnaire-resa-traiter.component';
 import { ConcessionnaireClientsComponent } from './main/concessionnaire-clients/concessionnaire-clients.component';
 import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa/concessionnaire-une-resa.component';
 import { ORSYS_ROUTING } from './app.routing';
@@ -23,6 +22,8 @@ import { NavbarconcessionnaireComponent } from './sub/navbarconcessionnaire/navb
 import { CookieService } from 'ngx-cookie-service';
 import { ListeLocataireComponent } from './sub/liste-locataire/liste-locataire.component';
 import { ItemLocataireComponent } from './sub/item-locataire/item-locataire.component';
+import { ListeReservationComponent } from './sub/liste-reservation/liste-reservation.component';
+import { ItemReservationComponent } from './sub/item-reservation/item-reservation.component';
 
 
 @NgModule({
@@ -37,13 +38,14 @@ import { ItemLocataireComponent } from './sub/item-locataire/item-locataire.comp
     ConcessionnaireComponent,
     LocataireVoirComponent,
     ConcessionnaireResaComponent,
-    ConcessionnaireResaTraiterComponent,
     ConcessionnaireClientsComponent,
     ConcessionnaireUneResaComponent,
     NavbarclientComponent,
     NavbarconcessionnaireComponent,
     ListeLocataireComponent,
-    ItemLocataireComponent
+    ItemLocataireComponent,
+    ListeReservationComponent,
+    ItemReservationComponent
   ],
   imports: [
   BrowserModule,

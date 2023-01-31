@@ -7,7 +7,6 @@ import { LocataireResaComponent } from './main/locataire-resa/locataire-resa.com
 import { LocataireVoirComponent } from './main/locataire-voir/locataire-voir.component';
 import { ConcessionnaireComponent } from './main/concessionnaire/concessionnaire.component';
 import { ConcessionnaireResaComponent } from './main/concessionnaire-resa/concessionnaire-resa.component';
-import { ConcessionnaireResaTraiterComponent } from './main/concessionnaire-resa-traiter/concessionnaire-resa-traiter.component';
 import { ConcessionnaireClientsComponent } from './main/concessionnaire-clients/concessionnaire-clients.component';
 import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa/concessionnaire-une-resa.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,7 +23,6 @@ const myRoutes: Routes = [
     {path:'concessionnaire', children:[
         {path:'', component: ConcessionnaireComponent},
         {path:'resa', component: ConcessionnaireResaComponent},
-        {path:'resasATraiter', component: ConcessionnaireResaTraiterComponent},
         {path:'clients', component: ConcessionnaireClientsComponent},
         {path:':id', component: ConcessionnaireUneResaComponent}
     ],},

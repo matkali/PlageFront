@@ -11,7 +11,6 @@ export class ItemLocataireComponent {
   @Input() locataire: Locataire;
   date: string;
   ngOnInit() {
-    console.log(this.locataire);
     this.date = formatDate(
       this.locataire.dateHeureInscription,
       'yyyy-MM-dd',
