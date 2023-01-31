@@ -1,6 +1,8 @@
 import { Concessionnaire } from "./concessionnaire";
 import { Statut } from './statut';
 import { Parasol } from './parasol';
+import { Locataire } from 'src/app/models/locataire';
+import { Utilisateur } from './utilisateur';
 
 export class Location{
     constructor(
@@ -11,6 +13,7 @@ export class Location{
         public concessionnaire : Concessionnaire,
         public statut : Statut,
         public nbParasols : number,
-        public parasols: Parasol[]
+        public parasols: Parasol[],
+        public locataire: Locataire
     ){}
 }

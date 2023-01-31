@@ -5,6 +5,7 @@ import { Location } from '../models/location';
 import { File } from '../models/file';
 import { formatDate } from '@angular/common';
 import { Locataire } from './../models/locataire';
+import { Parasol } from 'src/app/models/parasol';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,9 @@ export class HttpService {
 
   locataireCreation(loc: Locataire): Observable<object>{
     return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocataire`,loc);
+  }
+
+  locationCreation(location: Location): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocation`,location );
   }
 }
