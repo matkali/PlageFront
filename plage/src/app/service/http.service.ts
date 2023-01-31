@@ -45,4 +45,8 @@ export class HttpService {
   locationCreation(location: Location): Observable<object>{
     return this.client.post(`http://localhost:8080/api/utilisateurs/creationLocation`,location );
   }
+
+  changerStatut(id:number, statut:string): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/locations/modifStatutResa/${id}/${statut}`,null);
+  }
 }

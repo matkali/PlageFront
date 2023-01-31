@@ -57,7 +57,7 @@ export class ConcessionnaireUneResaComponent {
     });
   }
 
-  test(){
+  enAttente(){
     console.log(this.location.parasols);
     console.log(this.location.montantAReglerEnEuros);
   }
@@ -70,5 +70,18 @@ export class ConcessionnaireUneResaComponent {
         }
       }
     }
+  }
+
+  rejeter(){
+    this.service.changerStatut(this.idResa, 'Refusée').subscribe({
+      next: () => (
+        this.router.navigate(['/concessionnaire/'+this.location.id])
+      ),
+      error: ()=> alert("something went wrong :!")
+    })
+  }
+
+  valider(){
+
   }
 }
