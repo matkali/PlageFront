@@ -53,4 +53,8 @@ export class HttpService {
   changerStatut(id:number, statut:string): Observable<object>{
     return this.client.post(`http://localhost:8080/api/locations/modifStatutResa/${id}/${statut}`,null);
   }
+
+  validationLocation(location: Location): Observable<object>{
+    return this.client.post(`http://localhost:8080/api/utilisateurs/validationLocation`,location );
+  }
 }

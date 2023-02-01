@@ -20,6 +20,7 @@ export class ConcessionnaireUneResaComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {}
+  paras: Parasol[]=[];
   idResa: number = 0;
   fileTab: any[]=[0,0,0,0,0,0,0,0];
   location: Location = new Location(
@@ -58,8 +59,12 @@ export class ConcessionnaireUneResaComponent {
   }
 
   enAttente(){
-    console.log(this.location.parasols);
-    console.log(this.location.montantAReglerEnEuros);
+    this.service.changerStatut(this.idResa, 'En attente').subscribe({
+      next: () => (
+        window.location.reload()
+      ),
+      error: ()=> alert("something went wrong :!")
+    })
   }
 
   tabConstruct(){
@@ -75,13 +80,34 @@ export class ConcessionnaireUneResaComponent {
   rejeter(){
     this.service.changerStatut(this.idResa, 'Refusée').subscribe({
       next: () => (
-        this.router.navigate(['/concessionnaire/'+this.location.id])
+        window.location.reload()
       ),
       error: ()=> alert("something went wrong :!")
     })
   }
 
   valider(){
+    for( let par of this.paras){
+      par.reserve=true;
+    }
+    this.location.parasols=this.paras;
+    this.service.changerStatut(this.idResa, 'Acceptée').subscribe({
+      next: () => (
+        window.location.reload()
+      ),
+      error: ()=> alert("something went wrong :!")
+    })
+    let response = this.service.validationLocation(this.location);
+    response.subscribe({
+      next: () => (
+        window.location.reload()
+      ),
+      error : ()=>alert("something went wrong :!")
+    })
+  }
 
+  traitementPara(parasTab: Parasol[]){
+    this.paras=parasTab;
+    
   }
 }
