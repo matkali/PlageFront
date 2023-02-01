@@ -80,16 +80,6 @@ export class PlageSelectorComponent {
       }
       console.log(this.parasolsSelect);
     }
-    if(parasol.select){
-      this.paras.push(parasol);
-    } else {
-      for(let i=0; i<this.paras.length;i++){
-        if(parasol==this.paras[i]){
-          this.paras.splice(i,1);
-        }
-      }
-    }
-    this.msgToResa.emit(this.paras);
   }
   ngOnInit() {
     if (
