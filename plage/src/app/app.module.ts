@@ -47,7 +47,7 @@ import { PlageSelectorComponent } from './sub/plage-selector/plage-selector.comp
     ItemLocataireComponent,
     ListeReservationComponent,
     ItemReservationComponent,
-    PlageSelectorComponent
+    PlageSelectorComponent,
   ],
   imports: [
   BrowserModule,

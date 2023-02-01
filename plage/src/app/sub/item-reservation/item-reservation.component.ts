@@ -28,6 +28,7 @@ export class ItemReservationComponent {
   }
 
   voirDetails(){
+    console.log(this.datedeb)
     this.router.navigate(['concessionnaire/'+this.location.id])
   }
 }
