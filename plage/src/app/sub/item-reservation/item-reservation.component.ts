@@ -26,9 +26,10 @@ export class ItemReservationComponent {
       'en-US'
     );
   }
-
   voirDetails(){
-    console.log(this.datedeb)
+    this.router.navigate(['locataire/'+this.location.id])
+  }
+  gererDetails(){
     this.router.navigate(['concessionnaire/'+this.location.id])
   }
 }

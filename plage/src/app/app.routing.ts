@@ -11,6 +11,7 @@ import { ConcessionnaireClientsComponent } from './main/concessionnaire-clients/
 import { ConcessionnaireUneResaComponent } from './main/concessionnaire-une-resa/concessionnaire-une-resa.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionComponent } from './main/inscription/inscription.component';
+import { LocataireUneResaComponent } from './main/locataire-une-resa/locataire-une-resa.component';
 
 const myRoutes: Routes = [
     {path:'', component: AccueilComponent},
@@ -18,7 +19,8 @@ const myRoutes: Routes = [
     {path:'locataire', children:[
         {path:'', component: LocataireComponent},
         {path:'resa', component: LocataireResaComponent},
-        {path:'voir', component: LocataireVoirComponent}
+        {path:'voir', component: LocataireVoirComponent},
+        {path:':id', component: LocataireUneResaComponent}
     ],},
     {path:'concessionnaire', children:[
         {path:'', component: ConcessionnaireComponent},
