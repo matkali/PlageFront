@@ -91,8 +91,7 @@ export class PlageSelectorComponent {
   }
   ngOnInit() {
     if (
-      this.user.getUser() == null ||
-      this.user.getUser().role != 'concessionnaire'
+      this.user.getUser() == null
     ) {
       this.router.navigate(['']);
     }
