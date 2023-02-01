@@ -15,11 +15,14 @@ import { Locataire } from 'src/app/models/locataire';
 })
 export class PlageSelectorComponent {
   @Output() msgToUneResa = new EventEmitter();
+  
   @Input() choisir: boolean;
   @Input() montrer: boolean;
   parasolsSelect: Parasol[];
   @Input() dateD: Date;
   @Input() dateF: Date;
+  @Input() fileTab: any[];
+  fileTabTest: any[]=[0,0,0,0,0,0,0,0]; 
   location: Location = new Location(
     new Date(),
     new Date(),
@@ -65,12 +68,16 @@ export class PlageSelectorComponent {
     });
   }
   select(parasol: Parasol) {
-    if (!parasol.reserve && this.choisir) {
+    if (!parasol.reserve && this.choisir && (this.fileTabTest[parasol.numFile-1]+1<=this.fileTab[parasol.numFile-1]||parasol.select)) {
+      
       parasol.select = !parasol.select;
+
       if (parasol.select) {
         this.parasolsSelect.push(parasol);
+        this.fileTabTest[parasol.numFile-1]+=1;
       } else {
         // Ne garder que les éléments qui sont différents de ce parasol
+        this.fileTabTest[parasol.numFile-1]-=1;
         this.parasolsSelect = this.parasolsSelect.filter(
           (obj) =>
           // Soit l'emplacement soit la file est différente
@@ -79,6 +86,7 @@ export class PlageSelectorComponent {
         );
       }
       this.msgToUneResa.emit(this.parasolsSelect);
+      
     }
   }
   ngOnInit() {

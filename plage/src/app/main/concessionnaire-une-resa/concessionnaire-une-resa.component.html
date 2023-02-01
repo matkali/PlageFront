@@ -8,7 +8,9 @@
         [montrer]="location.statut.nom == 'Acceptée'"
         [dateD]="location.dateDebut"
         [dateF]="location.dateFin"
+        [fileTab]="fileTab"
         (msgToUneResa)="traitementParasols($event)"
+        
       ></app-plage-selector>
     </div>
     <div class="col-md-5">
@@ -22,7 +24,7 @@
         <li class="list-group-item">
           Montant à régler : {{ location.montantAReglerEnEuros }}
         </li>
-        <li class="list-group-item">Remarque : {{ location.remarque }}</li>
+        <li *ngIf="location.remarque!=null" class="list-group-item">Remarque : {{ location.remarque }}</li>
         <li class="list-group-item">
           Nombre de Parasol : {{ location.nbParasols }}
         </li>
