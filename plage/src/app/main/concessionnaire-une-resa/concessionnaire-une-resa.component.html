@@ -39,12 +39,12 @@
 </div>
 <div class="row">
   <div class="col-sm-2">
-    <button class="btn btn-primary" (click)="enAttente()">En attente</button>
+    <button class="btn btn-primary" *ngIf="location.statut.nom=='En attente'" (click)="enAttente()">En attente</button>
   </div>
   <div class="col-sm-2">
-    <button class="btn btn-success" (click)="valider()">Valider</button>
+    <button class="btn btn-success" *ngIf="location.statut.nom=='En attente'" (click)="valider()">Valider</button>
   </div>
   <div class="col-sm-2">
-    <button class="btn btn-danger" (click)="rejeter()">Rejeter</button>
+    <button class="btn btn-danger" *ngIf="location.statut.nom=='En attente'" (click)="rejeter()">Rejeter</button>
   </div>
 </div>

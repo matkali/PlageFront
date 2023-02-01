@@ -53,6 +53,19 @@ export class LocataireResaComponent {
   
 
   submit(datedeb, datefin){
+      let dateD = datedeb.valueAsDate;
+      let dateF = datefin.valueAsDate;
+      if (dateD == null) {
+        dateD = dateF;
+      }
+      if (dateF == null) {
+        dateF = dateD;
+      }
+      if (new Date(dateD).getTime() - new Date(dateF).getTime() > 0) {
+        let date = dateD;
+        dateD = dateF;
+        dateF = date;
+      }
     this.locationForm.controls.nbParasols.setValue(this.parasols.length);
     this.locationForm.controls.concessionnaire.setValue('Rossini');
     this.locationForm.controls.statut.setValue('En attente');
@@ -66,8 +79,8 @@ export class LocataireResaComponent {
         control_number,
         false,
         true,
-        new Date(datedeb.valueAsDate),
-        new Date(datefin.valueAsDate)
+        dateD,
+        dateF
       );
       this.parasolTab.push(paras);
     }
@@ -90,8 +103,8 @@ export class LocataireResaComponent {
       0
     );
     this.location = new Location(
-      new Date(datedeb.valueAsDate),
-      new Date(datefin.valueAsDate),
+      dateD,
+      dateF,
       0,
       this.locationForm.controls.remarque.getRawValue(),
       null,

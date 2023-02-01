@@ -18,7 +18,20 @@ export class PlanningComponent {
   }
   actualiser(dateDeb:HTMLInputElement,dateFin:HTMLInputElement){
     this.files=[];
-    this.service.getFilesInfo(dateDeb.valueAsDate,dateFin.valueAsDate).subscribe(files =>{
+    let dateD = dateDeb.valueAsDate;
+    let dateF = dateFin.valueAsDate;
+    if (dateD == null) {
+      dateD = dateF;
+    }
+    if (dateF == null) {
+      dateF = dateD;
+    }
+    if (new Date(dateD).getTime() - new Date(dateF).getTime() > 0) {
+      let date = dateD;
+      dateD = dateF;
+      dateF = date;
+    }
+    this.service.getFilesInfo(dateD,dateF).subscribe(files =>{
       for(let f of files){
         this.files.push(f);
       }})

@@ -5,6 +5,8 @@ import { Parasol } from '../../models/parasol';
 import { Location } from '../../models/location';
 import { UserService } from 'src/app/service/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Statut } from 'src/app/models/statut';
+import { Locataire } from 'src/app/models/locataire';
 
 @Component({
   selector: 'app-plage-selector',
@@ -17,7 +19,17 @@ export class PlageSelectorComponent {
   @Input() parasolsSelect: Parasol[];
   @Input() dateD: Date;
   @Input() dateF: Date;
-  location:Location;
+  location: Location = new Location(
+    new Date(),
+    new Date(),
+    0,
+    '',
+    null,
+    new Statut(''),
+    0,
+    null,
+    new Locataire(0,'','','','','',new Date(),'','',null,0)
+  );
   idResa;
   files: File[] = [];
   constructor(private service: HttpService, private user:UserService, private router:Router,
@@ -39,7 +51,7 @@ export class PlageSelectorComponent {
     this.getLocation(this.idResa);
 
     // On récupère toutes les files, et à mesure on vérifie si le parasol fait partie de la location présente
-    service.getFilesInfo(this.dateD, this.dateF).subscribe((files) => {
+    service.getFilesInfo(this.location.dateDebut, this.location.dateFin).subscribe((files) => {
       for (let f of files) {
         for(let p of f.parasols){
           for(let pSelect of this.parasolsSelect){
@@ -54,17 +66,19 @@ export class PlageSelectorComponent {
   }
   select(parasol: Parasol) {
     if (!parasol.reserve && this.choisir) {
-      this.parasolsSelect =[];
       parasol.select = !parasol.select;
       if (parasol.select) {
         this.parasolsSelect.push(parasol);
       } else {
+        // Ne garder que les éléments qui sont différents de ce parasol
         this.parasolsSelect = this.parasolsSelect.filter(
           (obj) =>
+          // Soit l'emplacement soit la file est différente
             obj.numEmplacement != parasol.numEmplacement ||
             obj.numFile != parasol.numFile
         );
       }
+      console.log(this.parasolsSelect);
     }
   }
   ngOnInit() {
@@ -78,10 +92,17 @@ export class PlageSelectorComponent {
   }
   getLocation(idRes: number) {
     this.service.getLocation(idRes).subscribe({
-      next: (a) => {(this.location = a);
+      next: (a) => {this.location = a;
         this.dateD = this.location.dateDebut;
         this.dateF = this.location.dateFin;
-        this.parasolsSelect = this.location.parasols;
+        console.log(this.location);
+        if(this.location.statut.nom == "En attente"){
+          this.parasolsSelect =[];
+          console.log(this.parasolsSelect)
+        } else {
+          this.parasolsSelect = this.location.parasols;
+          console.log(this.parasolsSelect)
+        }
         console.log(this.parasolsSelect)},
       error: () => this.router.navigate(['/Concessionnaire']),
     });
