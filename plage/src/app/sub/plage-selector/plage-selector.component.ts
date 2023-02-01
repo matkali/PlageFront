@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 import { File } from '../../models/file';
 import { Parasol } from '../../models/parasol';
@@ -14,9 +14,10 @@ import { Locataire } from 'src/app/models/locataire';
   styleUrls: ['./plage-selector.component.css'],
 })
 export class PlageSelectorComponent {
+  @Output() msgToUneResa = new EventEmitter();
   @Input() choisir: boolean;
   @Input() montrer: boolean;
-  @Input() parasolsSelect: Parasol[];
+  parasolsSelect: Parasol[];
   @Input() dateD: Date;
   @Input() dateF: Date;
   location: Location = new Location(
@@ -34,7 +35,6 @@ export class PlageSelectorComponent {
   files: File[] = [];
   constructor(private service: HttpService, private user:UserService, private router:Router,
     private route: ActivatedRoute) {
-    console.log(this.parasolsSelect)
     if (this.dateD == null) {
       this.dateD = new Date();
     }
@@ -78,7 +78,7 @@ export class PlageSelectorComponent {
             obj.numFile != parasol.numFile
         );
       }
-      console.log(this.parasolsSelect);
+      this.msgToUneResa.emit(this.parasolsSelect);
     }
   }
   ngOnInit() {
@@ -101,7 +101,6 @@ export class PlageSelectorComponent {
           console.log(this.parasolsSelect)
         } else {
           this.parasolsSelect = this.location.parasols;
-          console.log(this.parasolsSelect)
         }
         console.log(this.parasolsSelect)},
       error: () => this.router.navigate(['/Concessionnaire']),

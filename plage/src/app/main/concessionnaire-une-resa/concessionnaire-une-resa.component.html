@@ -8,7 +8,7 @@
         [montrer]="location.statut.nom == 'Acceptée'"
         [dateD]="location.dateDebut"
         [dateF]="location.dateFin"
-        [parasolsSelect]="location.parasols"
+        (msgToUneResa)="traitementParasols($event)"
       ></app-plage-selector>
     </div>
     <div class="col-md-5">
