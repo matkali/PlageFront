@@ -23,6 +23,7 @@ export class ConcessionnaireUneResaComponent {
   paras: Parasol[]=[];
   idResa: number = 0;
   fileTab: any[]=[0,0,0,0,0,0,0,0];
+  fileTabTest: any[]=[0,0,0,0,0,0,0,0];
   location: Location = new Location(
     new Date(),
     new Date(),
@@ -91,12 +92,6 @@ export class ConcessionnaireUneResaComponent {
       par.reserve=true;
     }
     this.location.parasols=this.paras;
-    this.service.changerStatut(this.idResa, 'Acceptée').subscribe({
-      next: () => (
-        window.location.reload()
-      ),
-      error: ()=> alert("something went wrong :!")
-    })
     let response = this.service.validationLocation(this.location);
     response.subscribe({
       next: () => (
@@ -106,8 +101,16 @@ export class ConcessionnaireUneResaComponent {
     })
   }
 
-  traitementPara(parasTab: Parasol[]){
+  traitementParasols(parasTab: Parasol[]){
+    for(let i=0; i<this.fileTabTest.length;i++){
+      for(let para of parasTab){
+        if(para.numFile==i+1){
+          this.fileTabTest[i]+=1;
+        }
+      }
+    }
     this.paras=parasTab;
+    console.log(this.paras);
     
   }
 }
