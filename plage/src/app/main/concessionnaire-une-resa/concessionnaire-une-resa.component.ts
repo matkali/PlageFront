@@ -108,7 +108,7 @@ export class ConcessionnaireUneResaComponent {
         error: () => alert('something went wrong :!'),
       });
     } else {
-      alert("Il mnanque des parasols");
+      alert("Il manque des parasols");
       window.location.reload();
 
     }
